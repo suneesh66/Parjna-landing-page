@@ -634,7 +634,8 @@
         tags: ['scheduling', 'real-time'],
         owner: 'Amir Chen',
         publishedExternal: true,
-        image: 'linear-gradient(135deg, #9fd08d 0%, #67c08f 35%, #1f2c3a 100%)'
+        image: 'linear-gradient(135deg, #9fd08d 0%, #67c08f 35%, #1f2c3a 100%)',
+        link: '#'
       },
       {
         id: 'shared-review',
@@ -645,7 +646,8 @@
         tags: ['collaboration', 'review'],
         owner: 'Priya Nair',
         publishedExternal: true,
-        image: 'linear-gradient(135deg, #71d7d1 0%, #6396ff 30%, #8c57ff 60%, #ff8cc8 100%)'
+        image: 'linear-gradient(135deg, #71d7d1 0%, #6396ff 30%, #8c57ff 60%, #ff8cc8 100%)',
+        link: '#'
       },
       {
         id: 'dynamic-pricing',
@@ -656,7 +658,8 @@
         tags: ['pricing', 'AI'],
         owner: 'Marcus Webb',
         publishedExternal: true,
-        image: 'linear-gradient(135deg, #160709 0%, #6f1d1b 40%, #ff5a36 100%)'
+        image: 'linear-gradient(135deg, #160709 0%, #6f1d1b 40%, #ff5a36 100%)',
+        link: '#'
       },
       {
         id: 'deal-velocity',
@@ -667,7 +670,8 @@
         tags: ['dashboard', 'pipeline'],
         owner: 'Tom Andersen',
         publishedExternal: true,
-        image: 'linear-gradient(135deg, #84f0b8 0%, #47a5f8 45%, #7e5bef 100%)'
+        image: 'linear-gradient(135deg, #84f0b8 0%, #47a5f8 45%, #7e5bef 100%)',
+        link: '#'
       },
       {
         id: 'client-health',
@@ -678,7 +682,8 @@
         tags: ['health-score', 'CSM'],
         owner: 'Nina Okafor',
         publishedExternal: true,
-        image: 'linear-gradient(135deg, #f9d857 0%, #1ea6ae 40%, #0b4fa3 100%)'
+        image: 'linear-gradient(135deg, #f9d857 0%, #1ea6ae 40%, #0b4fa3 100%)',
+        link: '#'
       },
       {
         id: 'stakeholder-mapping',
@@ -689,7 +694,8 @@
         tags: ['stakeholder', 'enterprise'],
         owner: 'Fatima Al-Rashid',
         publishedExternal: true,
-        image: 'linear-gradient(135deg, #ff6d4a 0%, #8c52ff 45%, #2c3ebf 100%)'
+        image: 'linear-gradient(135deg, #ff6d4a 0%, #8c52ff 45%, #2c3ebf 100%)',
+        link: '#'
       },
       {
         id: 'digital-sales-room',
@@ -700,7 +706,8 @@
         tags: ['DSR', 'buyer-experience'],
         owner: 'Amir Chen',
         publishedExternal: true,
-        image: 'linear-gradient(135deg, #6987ff 0%, #93a8d8 55%, #e7e1de 100%)'
+        image: 'linear-gradient(135deg, #6987ff 0%, #93a8d8 55%, #e7e1de 100%)',
+        link: '#'
       },
       {
         id: 'ebr-builder',
@@ -711,7 +718,8 @@
         tags: ['EBR', 'QBR'],
         owner: 'Priya Nair',
         publishedExternal: true,
-        image: 'linear-gradient(135deg, #7e7bff 0%, #5b3df0 35%, #121a2d 100%)'
+        image: 'linear-gradient(135deg, #7e7bff 0%, #5b3df0 35%, #121a2d 100%)',
+        link: '#'
       }
     ];
 
@@ -809,6 +817,7 @@
         const tags = poc.tags.slice(0, 2).map(tag => `<span class="tag">⌁ ${escapeHtml(tag)}</span>`).join('');
         const tint = categoryTints[poc.category] || 'rgba(79, 70, 229, 0.60)';
         return `
+        <a href="${escapeHtml(poc.link)}" target="_blank">
           <article class="card">
             <div class="card-media" style="--tint: ${tint};">
               <div class="card-bg" style="background-image: ${escapeHtmlAttr(poc.image)};"></div>
@@ -829,6 +838,7 @@
               <a href="#" class="explore">Explore ↗</a>
             </div>
           </article>
+          </a>
         `;
       }).join('');
     }
