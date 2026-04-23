@@ -817,7 +817,6 @@
         const tags = poc.tags.slice(0, 2).map(tag => `<span class="tag">⌁ ${escapeHtml(tag)}</span>`).join('');
         const tint = categoryTints[poc.category] || 'rgba(79, 70, 229, 0.60)';
         return `
-        <a href="${escapeHtml(poc.link)}" target="_blank">
           <article class="card">
             <div class="card-media" style="--tint: ${tint};">
               <div class="card-bg" style="background-image: ${escapeHtmlAttr(poc.image)};"></div>
@@ -835,10 +834,9 @@
             </div>
             <div class="card-footer">
               <span class="owner">${escapeHtml(poc.owner)}</span>
-              <a href="#" class="explore">Explore ↗</a>
+              <a href="${escapeHtml(poc.link)}" target="_blank" class="explore">Explore ↗</a>
             </div>
           </article>
-          </a>
         `;
       }).join('');
     }
